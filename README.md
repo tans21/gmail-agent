@@ -32,12 +32,6 @@ This agent connects to your Gmail inbox and **automatically**:
 | 📊 **Daily Summary**     | Posts a cleanup report to Discord at the end of each run            |
 | 🔁 **Smart Tracking**    | Remembers processed emails so nothing gets handled twice            |
 
-<p align="center">
-  <img src="assets/daily-summary.png" alt="Daily Cleanup Summary on Discord" width="400" />
-  <br/>
-  <em>📊 Daily Cleanup Summary — Discord notification</em>
-</p>
-
 ---
 
 ## 📸 How It Works
@@ -193,6 +187,12 @@ Total emails deleted: 42
 💬 Social deleted (10):
 • John commented on your post — notifications@social.com
 ```
+
+<p align="center">
+  <img src="assets/daily-summary.png" alt="Daily Cleanup Summary on Discord" width="600" />
+  <br/>
+  <em>📊 Daily Cleanup Summary — Discord notification</em>
+</p>
 
 ---
 
