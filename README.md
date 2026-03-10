@@ -24,13 +24,19 @@
 
 This agent connects to your Gmail inbox and **automatically**:
 
-| Action | Description |
-|--------|-------------|
+| Action                   | Description                                                         |
+| ------------------------ | ------------------------------------------------------------------- |
 | 🧠 **AI Classification** | Uses `facebook/bart-large-mnli` (zero-shot) to classify every email |
-| 🗑️ **Auto-Delete** | Trashes newsletters, spam, promotions & social emails |
-| 💼 **Job Alerts** | Sends Discord notifications for job-related emails |
-| 📊 **Daily Summary** | Posts a cleanup report to Discord at the end of each run |
-| 🔁 **Smart Tracking** | Remembers processed emails so nothing gets handled twice |
+| 🗑️ **Auto-Delete**       | Trashes newsletters, spam, promotions & social emails               |
+| 💼 **Job Alerts**        | Sends Discord notifications for job-related emails                  |
+| 📊 **Daily Summary**     | Posts a cleanup report to Discord at the end of each run            |
+| 🔁 **Smart Tracking**    | Remembers processed emails so nothing gets handled twice            |
+
+<p align="center">
+  <img src="assets/daily-summary.png" alt="Daily Cleanup Summary on Discord" width="400" />
+  <br/>
+  <em>📊 Daily Cleanup Summary — Discord notification</em>
+</p>
 
 ---
 
@@ -137,11 +143,11 @@ The agent uses **facebook/bart-large-mnli** — a ~400M parameter model fine-tun
 
 ### Classification Labels
 
-| Label | Action |
-|-------|--------|
-| `important email` | ✅ Kept in inbox |
-| `newsletter` | 🗑️ Moved to trash |
-| `spam` | 🗑️ Moved to trash |
+| Label             | Action                           |
+| ----------------- | -------------------------------- |
+| `important email` | ✅ Kept in inbox                 |
+| `newsletter`      | 🗑️ Moved to trash                |
+| `spam`            | 🗑️ Moved to trash                |
 | `job opportunity` | 📢 Discord alert + kept in inbox |
 
 ### Optimization
@@ -158,6 +164,7 @@ This reduces unnecessary model calls and speeds up processing.
 ## 📢 Discord Notifications
 
 ### Job Alert
+
 ```
 📧 New Job Email
 
@@ -166,6 +173,7 @@ Subject: Software Engineer Opening — Apply Now
 ```
 
 ### Daily Cleanup Summary
+
 ```
 🗑️ Daily Cleanup Summary
 
@@ -190,25 +198,25 @@ Total emails deleted: 42
 
 ## ⚙️ Configuration Reference
 
-| Variable | Location | Description |
-|----------|----------|-------------|
-| `GMAIL_SCOPES` | `.env` | Gmail API permission scope |
-| `DISCORD_WEBHOOK` | `.env` | Discord channel webhook URL |
-| `PROCESSED_FILE` | `config.py` | Path to processed email IDs file |
-| `CLASSIFICATION_LABELS` | `classifier.py` | AI classification categories |
+| Variable                | Location        | Description                      |
+| ----------------------- | --------------- | -------------------------------- |
+| `GMAIL_SCOPES`          | `.env`          | Gmail API permission scope       |
+| `DISCORD_WEBHOOK`       | `.env`          | Discord channel webhook URL      |
+| `PROCESSED_FILE`        | `config.py`     | Path to processed email IDs file |
+| `CLASSIFICATION_LABELS` | `classifier.py` | AI classification categories     |
 
 ---
 
 ## 📦 Dependencies
 
-| Package | Purpose |
-|---------|---------|
-| `google-auth-oauthlib` | Gmail OAuth 2.0 flow |
-| `google-api-python-client` | Gmail API client |
-| `transformers` | Hugging Face AI pipelines |
-| `torch` | PyTorch backend for model inference |
-| `requests` | Discord webhook HTTP calls |
-| `python-dotenv` | Load secrets from `.env` |
+| Package                    | Purpose                             |
+| -------------------------- | ----------------------------------- |
+| `google-auth-oauthlib`     | Gmail OAuth 2.0 flow                |
+| `google-api-python-client` | Gmail API client                    |
+| `transformers`             | Hugging Face AI pipelines           |
+| `torch`                    | PyTorch backend for model inference |
+| `requests`                 | Discord webhook HTTP calls          |
+| `python-dotenv`            | Load secrets from `.env`            |
 
 ---
 
